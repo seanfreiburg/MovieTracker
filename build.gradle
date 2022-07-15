@@ -55,9 +55,6 @@ spotless {
     kotlin {
         target '**/*.kt'
         ktlint()
-        // ktfmt()
-        // diktat()
-        // prettier()
         trimTrailingWhitespace()
         indentWithSpaces()
         endWithNewline()
