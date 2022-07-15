@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.library'
+    id 'org.gradle.android.cache-fix'
+    id 'org.jetbrains.kotlin.android'
+    id 'app.cash.paparazzi'
+}
+
+android {
+    namespace 'com.sfreiburg.composables'
+    compileSdk project_target_sdk
+
+    defaultConfig {
+        minSdk project_min_sdk
+        targetSdk project_target_sdk
+    }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion "$compose_version"
+    }
+}
+
+dependencies {
+    api "androidx.compose.ui:ui:$compose_version"
+    api "androidx.compose.foundation:foundation-layout:$compose_version"
+    api 'androidx.compose.material3:material3:1.0.0-alpha13'
+    api "androidx.compose.runtime:runtime:$compose_version"
+    api project(path: ':models')
+    debugApi "androidx.customview:customview-poolingcontainer:1.0.0-beta02"
+    debugApi "androidx.customview:customview:1.2.0-alpha01"
+    debugImplementation("androidx.compose.ui:ui-tooling:$compose_version")
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation "androidx.compose.foundation:foundation:$compose_version"
+    implementation "androidx.compose.ui:ui-graphics:$compose_version"
+    implementation "androidx.compose.ui:ui-text:$compose_version"
+    implementation "androidx.compose.ui:ui-unit:$compose_version"
+    implementation "com.airbnb.android:mavericks:$mavericks_version"
+    implementation 'androidx.core:core:1.8.0'
+    implementation("io.coil-kt:coil-compose:2.1.0")
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+}

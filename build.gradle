@@ -1,0 +1,65 @@
+buildscript {
+    ext {
+        kotlin_version = '1.6.10'
+        kotlin_coroutines_version = '1.6.2'
+        compose_version = '1.1.1'
+        nav_version = "2.4.2"
+        hilt_version = "2.42"
+        vanpra_version = "0.8.0-beta"
+        junit_version = "4.13.2"
+        truth_version = "1.1.3"
+        moshi_version = "1.13.0"
+        navigation_version = "2.4.2"
+        retrofit_version = "2.9.0"
+        sql_delight_version = "1.5.3"
+        mavericks_version = "2.7.0"
+        turbine_version = "0.8.0"
+
+        project_min_sdk = 28
+        project_target_sdk = 32
+    }
+    dependencies {
+        // other plugins...
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath 'app.cash.paparazzi:paparazzi-gradle-plugin:1.0.0'
+        classpath 'app.cash.molecule:molecule-gradle-plugin:0.2.0'
+        classpath "com.squareup.sqldelight:gradle-plugin:$sql_delight_version"
+    }
+}
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version "$kotlin_version" apply false
+    id "org.jetbrains.kotlin.kapt" version "$kotlin_version" apply false
+    id "com.diffplug.spotless" version "6.6.1" apply true
+    id "org.gradle.android.cache-fix" version "2.5.3" apply false
+    id "com.google.devtools.ksp" version "1.6.10-1.0.4" apply false
+    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version" apply false
+}
+
+spotless {
+    // optional: limit format enforcement to just the files changed by this feature branch
+    ratchetFrom 'origin/master'
+
+    format 'misc', {
+        // define the files to apply `misc` to
+        target '**/*.gradle', '**/*.md', '**/.gitignore'
+
+        // define the steps to apply to those files
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    kotlin {
+        target '**/*.kt'
+        ktlint()
+        // ktfmt()
+        // diktat()
+        // prettier()
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+}

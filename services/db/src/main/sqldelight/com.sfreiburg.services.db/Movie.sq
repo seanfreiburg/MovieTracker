@@ -1,0 +1,26 @@
+CREATE TABLE movie (
+  id INTEGER AS Int NOT NULL PRIMARY KEY,
+  title TEXT NOT NULL,
+  overview TEXT NOT NULL,
+  backdrop_url TEXT NOT NULL,
+  poster_url TEXT NOT NULL
+);
+
+selectAll:
+SELECT *
+FROM movie;
+
+selectById:
+SELECT *
+FROM movie
+WHERE id == :id;
+
+insertMovie:
+INSERT OR REPLACE INTO movie(id, title, overview, backdrop_url, poster_url)
+VALUES ?;
+
+count:
+SELECT COUNT(*) FROM movie;
+
+deleteAll:
+DELETE FROM movie;

@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.library'
+    id 'org.gradle.android.cache-fix'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'app.cash.molecule'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.sfreiburg.presenters'
+    compileSdk project_target_sdk
+
+    defaultConfig {
+        minSdk project_min_sdk
+        targetSdk project_target_sdk
+    }
+}
+
+dependencies {
+    api "com.airbnb.android:mavericks:$mavericks_version"
+    api "com.airbnb.android:mavericks-hilt:$mavericks_version"
+    api project(path: ':framework:navigation')
+    implementation project(path: ':framework:presenters')
+    api project(path: ':repos')
+    api project(path: ':models')
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:$kotlin_coroutines_version"
+    implementation "com.google.dagger:hilt-core:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+    testImplementation "app.cash.turbine:turbine:$turbine_version"
+    testImplementation "com.airbnb.android:mavericks-testing:$mavericks_version"
+}
+
+kapt {
+    correctErrorTypes true
+}

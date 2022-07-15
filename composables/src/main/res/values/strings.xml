@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contentDescription_clear">Clear</string>
+    <string name="placeholder_search">Search</string>
+    <string name="header_loading">Loading</string>
+    <string name="error_message_title">Error Occurred</string>
+    <string name="error_stacktrace_title">Stacktrace: </string>
+</resources>

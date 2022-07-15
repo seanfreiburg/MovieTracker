@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.library'
+    id 'org.gradle.android.cache-fix'
+    id 'org.jetbrains.kotlin.android'
+    id "com.google.devtools.ksp"
+    id 'org.jetbrains.kotlin.kapt'
+}
+
+android {
+    namespace 'com.sfreiburg.services.network'
+    compileSdk project_target_sdk
+
+    defaultConfig {
+        minSdk project_min_sdk
+        targetSdk project_target_sdk
+    }
+}
+
+dependencies {
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.google.dagger:hilt-core:$hilt_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    ksp "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.10.0")
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "com.google.dagger:hilt-core:$hilt_version"
+}
+
+kapt {
+    correctErrorTypes true
+}

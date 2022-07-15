@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.library'
+    id 'org.gradle.android.cache-fix'
+    id 'org.jetbrains.kotlin.android'
+    id "com.google.devtools.ksp"
+}
+
+android {
+    namespace 'com.sfreiburg.services.network_fake'
+    compileSdk project_target_sdk
+
+    defaultConfig {
+        minSdk project_min_sdk
+        targetSdk project_target_sdk
+    }
+}
+
+dependencies {
+    api project(path: ':services:network')
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    ksp "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    api("com.squareup.okhttp3:mockwebserver:4.10.0")
+}

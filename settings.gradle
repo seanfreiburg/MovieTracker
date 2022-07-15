@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+rootProject.name = "MovieTracker"
+
+include ':app'
+include ':composables'
+include ':framework:navigation'
+include ':framework:presenters'
+include ':services:network'
+include ':services:network-fake'
+include ':services:db'
+include ':services:db-fake'
+include ':presenters'
+include ':repos'
+include ':routes'
+include ':screens'
+include ':models'

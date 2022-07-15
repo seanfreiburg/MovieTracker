@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="components/src/main/java/com/sfreiburg/components/ErrorMessage.kt" value="0.31397306397306396" />
+        <entry key="components/src/main/java/com/sfreiburg/components/FoodEntryForm.kt" value="0.31397306397306396" />
+        <entry key="components/src/main/java/com/sfreiburg/components/Home.kt" value="0.44037940379403795" />
+        <entry key="components/src/main/java/com/sfreiburg/components/Loading.kt" value="0.2898832684824903" />
+        <entry key="components/src/main/java/com/sfreiburg/components/Login.kt" value="0.43902439024390244" />
+        <entry key="components/src/main/java/com/sfreiburg/components/Show.kt" value="0.21825063078216989" />
+        <entry key="components/src/main/java/com/sfreiburg/components/Splash.kt" value="0.7059620596205962" />
+        <entry key="composables/src/main/java/com/sfreiburg/composables/FoodEntryForm.kt" value="0.3137089991589571" />
+        <entry key="composables/src/main/java/com/sfreiburg/composables/Home.kt" value="0.1" />
+        <entry key="composables/src/main/java/com/sfreiburg/composables/Loading.kt" value="0.20038910505836577" />
+        <entry key="composables/src/main/java/com/sfreiburg/composables/Login.kt" value="0.1" />
+        <entry key="composables/src/main/java/com/sfreiburg/composables/Splash.kt" value="0.31397306397306396" />
+        <entry key="composables/src/main/java/com/sfreiburg/composables/shared/ErrorMessage.kt" value="0.21698906644238855" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

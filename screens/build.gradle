@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+    id 'org.gradle.android.cache-fix'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.sfreiburg.screens'
+    compileSdk project_target_sdk
+
+    defaultConfig {
+        minSdk project_min_sdk
+        targetSdk project_target_sdk
+    }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion "$compose_version"
+    }
+}
+
+dependencies {
+    implementation "com.airbnb.android:mavericks-compose:$mavericks_version"
+    implementation project(path: ':framework:presenters')
+    api "androidx.compose.runtime:runtime:$compose_version"
+    api project(path: ':framework:navigation')
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation 'androidx.activity:activity:1.4.0'
+    implementation "androidx.compose.foundation:foundation-layout:$compose_version"
+    implementation "androidx.compose.foundation:foundation:$compose_version"
+    implementation 'androidx.compose.material3:material3:1.0.0-alpha13'
+    implementation "androidx.compose.ui:ui-graphics:$compose_version"
+    implementation 'androidx.fragment:fragment:1.4.1'
+    implementation 'androidx.lifecycle:lifecycle-common:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.3.1'
+    implementation 'androidx.savedstate:savedstate:1.2.0-rc01'
+    implementation project(path: ':composables')
+    implementation project(path: ':presenters')
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+}

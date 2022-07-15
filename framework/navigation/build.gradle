@@ -1,0 +1,25 @@
+plugins {
+    id 'com.android.library'
+    id 'org.gradle.android.cache-fix'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.sfreiburg.framework.navigation'
+    compileSdk project_target_sdk
+
+    defaultConfig {
+        minSdk project_min_sdk
+        targetSdk project_target_sdk
+    }
+}
+
+dependencies {
+    api "androidx.navigation:navigation-runtime:$navigation_version"
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:$kotlin_coroutines_version"
+    implementation "androidx.navigation:navigation-common:$navigation_version"
+    implementation project(path: ':routes')
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+}

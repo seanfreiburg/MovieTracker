@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/composables" />
+            <option value="$PROJECT_DIR$/framework" />
+            <option value="$PROJECT_DIR$/framework/navigation" />
+            <option value="$PROJECT_DIR$/framework/presenters" />
+            <option value="$PROJECT_DIR$/models" />
+            <option value="$PROJECT_DIR$/presenters" />
+            <option value="$PROJECT_DIR$/repos" />
+            <option value="$PROJECT_DIR$/routes" />
+            <option value="$PROJECT_DIR$/screens" />
+            <option value="$PROJECT_DIR$/services" />
+            <option value="$PROJECT_DIR$/services/db" />
+            <option value="$PROJECT_DIR$/services/db-fake" />
+            <option value="$PROJECT_DIR$/services/network" />
+            <option value="$PROJECT_DIR$/services/network-fake" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
