@@ -50,27 +50,35 @@ class MoviesPresenter @AssistedInject constructor(
     override fun onEvent(event: MoviesEvent) {
         when (event) {
             is MoviesEvent.SearchTextUpdated -> {
-                setState { copy(query = event.query) }
-
-                if (updateJob?.isActive == true) updateJob!!.cancel()
-                if (event.query.isBlank()) {
-                    updateJob = viewModelScope.launch {
-                        setState { copy(movies = Loading()) }
-                        val moviesResult = movieRepo.fetchTrending()
-                        if (isActive && moviesResult.isSuccess) {
-                            setState { copy(movies = Success(moviesResult.getOrThrow())) }
-                        } else if (isActive && moviesResult.isFailure) {
-                            setState { copy(movies = Fail(moviesResult.exceptionOrNull()!!)) }
-                        }
+                withState { state ->
+                    if (event.query == state.query) {
+                        return@withState
                     }
-                } else {
-                    updateJob = viewModelScope.launch {
-                        setState { copy(movies = Loading()) }
-                        val searchResult = movieRepo.search(event.query)
-                        if (isActive && searchResult.isSuccess) {
-                            setState { copy(movies = Success(searchResult.getOrThrow())) }
-                        } else if (isActive && searchResult.isFailure) {
-                            setState { copy(movies = Fail(searchResult.exceptionOrNull()!!)) }
+
+                    setState { copy(query = event.query) }
+
+                    // cancel running job because we have a new search to run
+                    if (updateJob?.isActive == true) updateJob!!.cancel()
+
+                    if (event.query.isBlank()) {
+                        updateJob = viewModelScope.launch {
+                            setState { copy(movies = Loading()) }
+                            val moviesResult = movieRepo.fetchTrending()
+                            if (isActive && moviesResult.isSuccess) {
+                                setState { copy(movies = Success(moviesResult.getOrThrow())) }
+                            } else if (isActive && moviesResult.isFailure) {
+                                setState { copy(movies = Fail(moviesResult.exceptionOrNull()!!)) }
+                            }
+                        }
+                    } else {
+                        updateJob = viewModelScope.launch {
+                            setState { copy(movies = Loading()) }
+                            val searchResult = movieRepo.search(event.query)
+                            if (isActive && searchResult.isSuccess) {
+                                setState { copy(movies = Success(searchResult.getOrThrow())) }
+                            } else if (isActive && searchResult.isFailure) {
+                                setState { copy(movies = Fail(searchResult.exceptionOrNull()!!)) }
+                            }
                         }
                     }
                 }

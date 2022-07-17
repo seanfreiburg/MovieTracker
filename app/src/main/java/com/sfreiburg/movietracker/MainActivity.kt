@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.sfreiburg.framework.navigation.toNavigator
@@ -39,7 +40,7 @@ private fun MovieTrackerApp() {
         ) {
             composable(Routes.NoArgRoutes.SplashRoute.path) { SplashScreen(navigator) }
             composable(Routes.NoArgRoutes.MoviesRoute.path) { MoviesScreen(navigator) }
-            composable(
+            dialog(
                 Routes.ArgRoutes.MovieDetailsRoute.path,
                 arguments = listOf(
                     navArgument(Routes.ArgRoutes.MovieDetailsRoute.movieIdArg) {

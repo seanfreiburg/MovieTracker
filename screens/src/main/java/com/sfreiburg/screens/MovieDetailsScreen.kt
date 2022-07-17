@@ -18,7 +18,7 @@ fun MovieDetailsScreen(
         argsFactory = { MovieDetailsArguments(movieId = movieId) }
     )
     val viewModel by presenter.collectViewModelsAsState()
-    AppThemeFullScreenWrapper {
+    AppThemeHalfScreenWrapper {
         MovieDetails(
             movie = viewModel.movie
         )
