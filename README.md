@@ -91,7 +91,10 @@ composables,
 
 # Run and install
 
-You should be able to load into Android Studio and just run the app as normal.
+You should be able to load into Android Studio and just run the app as normal. I built it in AS Eletric Eel Canary 8.
+
+`./gradlew build` from command line to build and run all tests
+`./gradlew installDebug` to install to you emulator
 
 # Follow ups
 
@@ -101,4 +104,4 @@ Sometimes the images pop in oddly, I would like to figure out if I could load th
 
 I could leverage the database to make the app work better offline
 
-Navigation isn't really what I would like but it works well enough for this project.
+Doing scrolling pagination would be nice to keep scrolling through movies, but I avoided to not make code more complex.
