@@ -95,8 +95,10 @@ You should be able to load into Android Studio and just run the app as normal.
 
 # Follow ups
 
-I would like to add better error handling in the UI.
+I would like to add better error handling to handle network issues.
 
 Sometimes the images pop in oddly, I would like to figure out if I could load the rows in order.
 
 I could leverage the database to make the app work better offline
+
+Navigation isn't really what I would like but it works well enough for this project.
