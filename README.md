@@ -24,16 +24,16 @@ I believe Netflix does too, looking at open source list in app.
 Jetpack Compose is a declarative React like framework used for views.
 
 
-Jetpack Navigation was used for navigation stack
+Jetpack Navigation was used for navigation stack.
 
 Coroutines/Flows were used to do async work
 
 Paparazzi was used to do view snapshot testing - Note due to Coil not working with Paparazzi,
 these aren't very useful, but I'm hopeful that it could be fixed.
 
-Dagger-Hilt was used to do dependency injection
+Dagger-Hilt was used to do dependency injection.
 
-Coil for async image loading and caching
+Coil for async image loading and caching.
 
 # Architecture
 The app uses MVI (Model-View-Intent) as a base of architecture.
