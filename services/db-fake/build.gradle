@@ -16,6 +16,7 @@ android {
 
 
 dependencies {
-    api project(path: ':services:db')
+    api project(':services:db')
     implementation "com.squareup.sqldelight:sqlite-driver:$sql_delight_version"
+    implementation 'com.squareup.sqldelight:runtime:1.5.3'
 }

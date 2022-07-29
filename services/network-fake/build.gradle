@@ -16,11 +16,12 @@ android {
 }
 
 dependencies {
-    api project(path: ':services:network')
+    api project(':services:network')
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.moshi:moshi:$moshi_version"
     ksp "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
     api("com.squareup.okhttp3:mockwebserver:4.10.0")
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
 }
